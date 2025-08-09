@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لیست خدمات | کافی نت کارنت</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="services.css">
+    <link rel="icon" type="image/webp" href="images/logo.webp">
+</head>
+<body>
+
+ <header class="header">
+    <div class="container header__container">
+        <a href="index.html" class="header__logo">
+            <img src="images/logo.webp" alt="آیکون کافه نت کارنت">
+            <span class="logo-text">کارنت</span>
+        </a>
+        <nav class="header__nav">
+    <ul>
+        <li><a href="index.html" class="nav__link--active"><span>صفحه اصلی</span></a></li>
+        <li><a href="services.html"><span> خدمات انلاین</span></a></li>
+        <li><a href="articles.html"><span>مقالات</span></a></li>
+        <li><a href="promotions.html"><span>تخفیفات</span></a></li>
+        <li><a href="faq.html"><span>سوالات متداول</span></a></li>
+        <li><a href="index.html#about-us"><span>درباره ما</span></a></li>
+            </ul>
+        </nav>
+        <div class="header__actions">
+                <button class="mobile-nav-toggle" aria-controls="mobile-menu" aria-expanded="false"><span class="sr-only">Menu</span></button>
+            </div>
+    </div>
+</header>
+<div class="mobile-nav-overlay" id="mobile-menu" data-visible="false">
+    <nav class="mobile-nav">
+        <ul>
+           <li><a href="index.html">صفحه اصلی</a></li>
+            <li><a href="services.html">بخش خدمات</a></li>
+            <li><a href="articles.html">مقالات</a></li>
+        <li><a href="promotions.html"><span>تخفیفات</span></a></li>
+            <li><a href="faq.html">سوالات متداول</a></li>
+            <li><a href="index.html#about-us">درباره ما</a></li>
+        </ul>
+    </nav>
+</div>
+
+    <main>
+        <section class="services-hero">
+            <div class="container">
+                <h1 class="services-hero__title animate-on-load">لیست کامل خدمات ما</h1>
+                <p class="services-hero__subtitle animate-on-load animate-delay-1">هر آنچه آنلاین نیاز دارید، ما برایتان انجام می‌دهیم</p>
+                <div class="search-container animate-on-load animate-delay-2">
+                    <i class="ph-bold ph-magnifying-glass search-icon"></i>
+                    <input type="text" id="serviceSearchInput" placeholder="جستجوی سرویس مورد نظر (مثلا: وام، خودرو، مالیات...)">
+                </div>
+            </div>
+        </section>
+        
+        <!-- === بخش تخفیفات از اینجا حذف شد === -->
+
+        <section class="services-grid-section">
+            <div class="container">
+                
+                <div id="no-results" class="no-results-message" style="display: none;">
+                    <i class="ph-bold ph-x-circle"></i>
+                    <p>هیچ سرویسی با عبارت جستجو شده مطابقت ندارد.</p>
+                </div>
+
+                <!-- دسته ۱: خودرو و رانندگی -->
+                <div class="service-category">
+                    <h2 class="service-category__title">خدمات خودرو و رانندگی</h2>
+                    <div class="services-grid">
+                        <a href="khodro/khodro.html" class="service-card"><i class="ph-bold ph-car"></i><span>ثبت نام خودرو</span></a>
+                        <a href="taviz-pelak/taviz-pelak.html" class="service-card"><i class="ph-bold ph-swap"></i><span>تعویض پلاک</span></a>
+                        <a href="maliyat-khodro/maliyat-khodro.html" class="service-card"><i class="ph-bold ph-receipt"></i><span>مالیات نقل و انتقال</span></a>
+                        <a href="khalafi-khodro/khalafi-khodro.html" class="service-card"><i class="ph-bold ph-traffic-cone"></i><span>خلافی خودرو</span></a>
+                        <a href="avarez/avarez-khodro.html" class="service-card"><i class="ph-bold ph-road-horizon"></i><span>عوارض آزاد راه</span></a>
+                    </div>
+                </div>
+
+                <!-- دسته ۲: وام‌ها و خدمات بانکی -->
+                <div class="service-category">
+                    <h2 class="service-category__title">وام‌ها و خدمات بانکی</h2>
+                    <div class="services-grid">
+                        <a href="vam-ezdevaj/vam-ezdevaj.html" class="service-card"><i class="ph-bold ph-heart"></i><span>وام ازدواج</span></a>
+                        <a href="vam-farzand/vam-farzand.html" class="service-card"><i class="ph-bold ph-baby"></i><span>وام فرزنداوری</span></a>
+                        <a href="vam-maskan/vam-maskan.html" class="service-card"><i class="ph-bold ph-house"></i><span>وام ودیعه مسکن</span></a>
+                        <a href="chek-sayadi/chek-sayadi.html" class="service-card"><i class="ph-bold ph-check-square"></i><span>ثبت چک صیادی</span></a>
+                    </div>
+                </div>
+
+                <!-- دسته ۳: امور قضایی و دولتی -->
+                <div class="service-category">
+                    <h2 class="service-category__title">امور قضایی و دولتی</h2>
+                    <div class="services-grid">
+                        <a href="sana/sana.html" class="service-card"><i class="ph-bold ph-scales"></i><span>ثبت ثنا</span></a>
+                        <a href="eblaghiyeh/eblaghiyeh.html" class="service-card"><i class="ph-bold ph-envelope-simple-open"></i><span>ابلاغیه الکترونیکی</span></a>
+                        <a href="soo-pishineh/soo-pishineh.html" class="service-card"><i class="ph-bold ph-fingerprint"></i><span>سوء پیشینه</span></a>
+                        <a href="safar-ziyarat/safar-ziarati.html" class="service-card"><i class="ph-bold ph-airplane-takeoff"></i><span>گذرنامه زیارتی</span></a>
+                        <a href="sakha/sakha.html" class="service-card"><i class="ph-bold ph-user-list"></i><span>سامانه سخا</span></a>
+                        <a href="code-maliyati/code-maliyati.html" class="service-card"><i class="ph-bold ph-user-plus"></i><span>ثبت نام مالیاتی</span></a>
+                        <a href="maliyat/maliyat.html" class="service-card"><i class="ph-bold ph-money"></i><span>پرداخت مالیات</span></a>
+                    </div>
+                </div>
+
+                <!-- دسته ۴: آموزش و تحصیل -->
+                <div class="service-category">
+                    <h2 class="service-category__title">آموزش و تحصیل</h2>
+                    <div class="services-grid">
+                        <a href="sabt-konkoor/sabt-konkoor.html" class="service-card"><i class="ph-bold ph-student"></i><span>ثبت نام کنکور</span></a>
+                        <a href="sabt-ketab/sabt-ketab.html" class="service-card"><i class="ph-bold ph-books"></i><span>ثبت نام کتب درسی</span></a>
+                        <a href="sabt-ketab/sabt-ketab.html" class="service-card"><i class="ph-bold ph-buildings"></i><span>ثبت نام مدارس</span></a>
+                        <a href="sabt-konkoor/sabt-konkoor.html" class="service-card"><i class="ph-bold ph-list-checks"></i><span>انتخاب واحد دانشگاه</span></a>
+                        <a href="taeedi-tahsili/taeedi-tahsili.html" class="service-card"><i class="ph-bold ph-graduation-cap"></i><span>تاییدیه تحصیلی</span></a>
+                        <a href="chap-rangi-siah/chap-rangi-siah.html" class="service-card"><i class="ph-bold ph-printer"></i><span>چاپ جزوه رنگی</span></a>
+                        <a href="chap-rangi-siah/chap-rangi-siah.html" class="service-card"><i class="ph-bold ph-printer"></i><span>چاپ جزوه سیاه و سفید</span></a>
+                    </div>
+                </div>
+
+                 <!-- دسته ۵: امور شخصی و عمومی -->
+                 <div class="service-category">
+                    <h2 class="service-category__title">امور شخصی و عمومی</h2>
+                    <div class="services-grid">
+                        <a href="sabeghe-bimeh/sabeghe-bimeh.html" class="service-card"><i class="ph-bold ph-shield"></i><span>سابقه بیمه</span></a>
+                        <a href="fishe-hoghooghee/fishe-hoghooghee.html" class="service-card"><i class="ph-bold ph-file-text"></i><span>فیش حقوقی</span></a>
+                        <a href="fishe-hoghooghee/fishe-hoghooghee.html" class="service-card"><i class="ph-bold ph-gavel"></i><span>حکم حقوقی</span></a>
+                        <a href="kasr-az-hoghoogh/kasr-az-hoghoogh.html" class="service-card"><i class="ph-bold ph-percent"></i><span>گواهی کسر از حقوق</span></a>
+                        <a href="amlak/amlak.html" class="service-card"><i class="ph-bold ph-house-line"></i><span>ثبت نام املاک و اسکان</span></a>
+                        <a href="taeedi-posti/taeedi-posti.html" class="service-card"><i class="ph-bold ph-map-pin"></i><span>ثبت کد پستی</span></a>
+                        <a href="bilit-stadium/bilit-stadium.html" class="service-card"><i class="ph-bold ph-ticket"></i><span>بلیط استادیوم</span></a>
+                        <a href="bime-varzeshi/bime-varzeshi.html" class="service-card"><i class="ph-bold ph-first-aid-kit"></i><span>بیمه ورزشی</span></a>
+                        <a href="kharid-bilit/kharid-bilit.html" class="service-card"><i class="ph-bold ph-shopping-cart"></i><span>خرید بلیط (اتوبوس/قطار)</span></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div class="widget-container">
+    <div class="quick-contact-widget" id="quickContactWidget">
+        <div class="quick-contact__menu">
+            <a href="https://t.me/@cafenetcarneet" target="_blank" class="quick-contact__item" aria-label="تلگرام"><i class="ph-bold ph-telegram-logo"></i></a>
+            <a href="https://rubika.ir/@Lhsysits" target="_blank" class="quick-contact__item" aria-label="روبیکا"><img src="images/rubika-logo.png" alt="روبیکا"></a>
+            <a href="tel:+989305649714" class="quick-contact__item" aria-label="تماس تلفنی"><i class="ph-bold ph-phone-call"></i></a>
+            <a href="support.html" class="quick-contact__item" aria-label="پشتیبانی آنلاین"><i class="ph-bold ph-headset"></i></a>
+        </div>
+        <button class="quick-contact__toggle" id="quickContactToggle" aria-label="باز کردن منوی تماس سریع">
+            <!-- The icon has been changed from ph-plus to ph-chat-dots -->
+            <i class="ph-bold ph-chat-dots"></i>
+        </button>
+    </div>
+</div>
+
+     <footer class="footer">
+        <div class="container">
+            <p>&copy; ۱۴۰۳ - تمام حقوق برای <span class="logo-text-footer">کافی نت کارنت</span> محفوظ است.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="services.js"></script>
+</body>
+</html>

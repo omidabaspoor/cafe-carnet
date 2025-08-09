@@ -1,0 +1,27 @@
+/* --- 1. وارد کردن استایل‌های پایه و مشترک --- */
+@import url('style.css'); /* این کار تمام استایل‌های صفحه اصلی را به ارث می‌برد */
+
+/* --- 2. استایل‌های اختصاصی صفحه تخفیفات --- */
+.promotions-hero {
+    padding: 80px 0;
+    text-align: center;
+    background-color: var(--surface-color);
+    border-bottom: 1px solid var(--border-color);
+}
+.promotions-hero__title {
+    font-family: var(--font-headings);
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    color: var(--text-light);
+}
+.promotions-hero__subtitle {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+}
+
+/* افزایش فاصله بالایی بخش تخفیفات در این صفحه خاص */
+.promotions-section {
+    padding-top: 80px;
+    padding-bottom: 100px;
+    background-color: var(--bg-color); /* بازگشت به پس‌زمینه اصلی */
+}
