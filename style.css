@@ -2506,7 +2506,7 @@ body.fade-out { opacity: 0; transition: opacity 0.4s ease-out; }
 
     /* استایل دکمه همبرگری */
 /* ======================================================== */
-/* === استایل نهایی و قطعی (منوی تلگرام از چپ + تم سایت) === */
+/* === استایل نهایی و قطعی (منوی کارتی وسط‌چین) === */
 /* ======================================================== */
 
 .mobile-nav-toggle,
@@ -2532,7 +2532,6 @@ body.fade-out { opacity: 0; transition: opacity 0.4s ease-out; }
     .mobile-nav-toggle::before { top: 25%; }
     .mobile-nav-toggle::after { top: 65%; }
 
-    /* لایه تاریک کننده پس‌زمینه (بدون تغییر) */
     .mobile-nav-drawer-overlay {
         display: block; position: fixed; inset: 0; z-index: 9999;
         background-color: rgba(0, 0, 0, 0.5);
@@ -2540,15 +2539,14 @@ body.fade-out { opacity: 0; transition: opacity 0.4s ease-out; }
         transition: opacity 0.4s ease, visibility 0s 0.4s;
     }
 
-    /* === تغییر کلیدی ۱: باز شدن از چپ و هماهنگی با تم === */
     .mobile-nav-drawer {
         display: flex; flex-direction: column;
-        position: fixed; top: 0; left: 0; bottom: 0; /* موقعیت در سمت چپ */
+        position: fixed; top: 0; left: 0; bottom: 0;
         width: clamp(280px, 85%, 320px);
-        background-color: var(--bg-color); /* هماهنگی با تم اصلی سایت */
-        border-left: 1px solid var(--border-color); /* یک خط جداکننده زیبا */
+        background-color: var(--bg-color);
+        border-left: 1px solid var(--border-color);
         z-index: 10000;
-        transform: translateX(-100%); /* شروع انیمیشن از خارج صفحه در چپ */
+        transform: translateX(-100%);
         transition: transform 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     }
     
@@ -2567,37 +2565,50 @@ body.fade-out { opacity: 0; transition: opacity 0.4s ease-out; }
         overflow-y: auto;
     }
     
+    /* === ۱. وسط‌چین کردن کل لیست کارت‌ها === */
     .mobile-nav ul {
-        list-style: none; padding: 0.5rem 0; margin: 0;
+        list-style: none; padding: 1rem 0; margin: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* مهم‌ترین خط: کارت‌ها را در مرکز افقی قرار می‌دهد */
+        gap: 0.75rem; /* فاصله بین کارت‌ها */
     }
     
+    /* === ۲. تعیین عرض کارت‌ها === */
+    .mobile-nav li {
+        width: 90%; /* عرض هر کارت ۹۰٪ پنل منو خواهد بود */
+    }
+
     .mobile-nav a {
-        display: flex; align-items: center; gap: 1.5rem;
-        padding: 0.9rem 1.5rem;
+        display: flex; align-items: center; gap: 1rem;
+        padding: 1rem 1.2rem;
         text-decoration: none;
-        color: var(--text-muted); /* رنگ پیش‌فرض خاکستری برای آیتم‌های غیرفعال */
-        transition: background-color 0.2s ease, color 0.2s ease;
+        color: var(--text-light);
+        background-color: var(--surface-color);
+        border-radius: 12px;
+        transition: background-color 0.2s ease, transform 0.2s ease;
     }
     .mobile-nav a:hover {
-        background-color: var(--surface-color);
+        background-color: #333;
+    }
+    .mobile-nav a:active {
+        transform: scale(0.98);
     }
 
     .mobile-nav a i {
-        font-size: 1.4rem;
-        transition: color 0.2s ease;
+        font-size: 1.4rem; color: var(--text-muted); transition: color 0.2s ease;
     }
     .mobile-nav a span {
         font-family: var(--font-primary); font-weight: 500; font-size: 1rem;
     }
     
-    .nav-separator hr {
-        border: none; border-top: 1px solid var(--border-color); margin: 0.5rem 0;
+    .mobile-nav a.nav__link--active {
+        background-color: var(--dark-green);
+        box-shadow: 0 0 15px rgba(76, 175, 80, 0.4);
     }
-    
-    /* === تغییر کلیدی ۲: استایل لینک فعال === */
     .mobile-nav a.nav__link--active span,
     .mobile-nav a.nav__link--active i {
-        color: var(--primary-color); /* رنگ سبز برای آیتم فعال */
+        color: var(--text-light);
     }
 
     /* --- استایل‌های حالت باز بودن منو --- */
