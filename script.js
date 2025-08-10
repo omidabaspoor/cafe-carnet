@@ -1,41 +1,35 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. منوی موبایل نهایی و بهینه ---
-    const navToggle = document.querySelector('.mobile-nav-toggle');
-    const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+
+    // --- 1. کنترل منوی موبایل حرفه‌ای ---
+      const navToggle = document.querySelector('.mobile-nav-toggle');
+    const navOverlay = document.querySelector('.mobile-nav-overlay');
+    const navCloseBtn = document.querySelector('.mobile-nav__close-btn');
     const bodyEl = document.body;
-    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
 
-    // === کد جدید برای انتخاب دکمه بستن ===
-    const closeNavBtn = document.querySelector('.mobile-nav__close-btn'); 
-
-    // تابع برای باز و بسته کردن منو
     function toggleMenu() {
-        // ... (این تابع بدون تغییر باقی می‌ماند)
-        if (bodyEl.classList.contains('nav-is-open')) {
-            bodyEl.classList.remove('nav-is-open');
-            if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
-            if (mobileNavOverlay) mobileNavOverlay.setAttribute('data-visible', 'false');
-        } else {
-            bodyEl.classList.add('nav-is-open');
-            if (navToggle) navToggle.setAttribute('aria-expanded', 'true');
-            if (mobileNavOverlay) mobileNavOverlay.setAttribute('data-visible', 'true');
-        }
+        bodyEl.classList.toggle('nav-is-open');
     }
 
-    if (navToggle && mobileNavOverlay) {
+    if (navToggle && navOverlay && navCloseBtn) {
         navToggle.addEventListener('click', toggleMenu);
+        navCloseBtn.addEventListener('click', toggleMenu);
         
-        // === کد جدید برای فعال‌سازی دکمه بستن ===
-        if (closeNavBtn) {
-            closeNavBtn.addEventListener('click', toggleMenu);
-        }
-
-        mobileNavLinks.forEach(link => {
-            link.addEventListener('click', toggleMenu);
+        const mobileLinks = navOverlay.querySelectorAll('a');
+        mobileLinks.forEach(link => {
+            // اگر لینک به بخش دیگری از همین صفحه بود، با کلیک منو را ببند
+            if (link.getAttribute('href') && link.getAttribute('href').includes('#')) {
+                link.addEventListener('click', toggleMenu);
+            }
         });
     }
 
-    // ... (بقیه کدهای جاوا اسکریپت شما)
+    // --- بقیه کدهای شما (آکاردئون، ویجت و ...) در اینجا قرار می‌گیرند ---
+    // ...
+
+    // --- بقیه کدهای جاوا اسکریپت شما ---
+    // (کدهای آکاردئون، انیمیشن اسکرول و ... اینجا قرار می‌گیرند)
+
+
 
     // --- 2. ویجت چت (ارتباط با ما) ---
     const chatWidget = document.querySelector('.chat-widget');

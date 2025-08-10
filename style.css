@@ -2495,47 +2495,54 @@ body.fade-out { opacity: 0; transition: opacity 0.4s ease-out; }
 .quick-contact__item img { width: 28px; height: 28px; }
 
 /* --- 4. Mobile Menu (Flawless Version) --- */
-/* --- 11. Responsive Styles (Professional Mobile Menu) --- */
+/* ======================================================== */
+/* === 11. استایل‌های ریسپانسیو (منوی موبایل حرفه‌ای) === */
+/* ======================================================== */
 @media (max-width: 768px) {
-    /* Hide desktop navigation */
+    /* مخفی کردن منوی دسکتاپ */
     .header__nav {
         display: none;
     }
 
-    /* Hamburger Button Styles */
-    .mobile-nav-toggle {
-        display: block; position: relative; z-index: 10001; background: transparent;
-        border: 0; width: 2.5rem; aspect-ratio: 1; padding: 0; cursor: pointer;
+    /* استایل دکمه همبرگری */
+.mobile-nav-toggle,
+.mobile-nav-overlay {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .header__nav {
+        display: none;
     }
-    .mobile-nav-toggle::before, .mobile-nav-toggle::after {
-        content: ''; position: absolute; width: 100%; height: 3px; background: var(--text-light);
-        border-radius: 5px; left: 0; transition: all 0.3s ease-out;
+    .mobile-nav-toggle {
+        display: block;
+        position: relative;
+        z-index: 2;
+        background: transparent;
+        border: 0;
+        width: 2.5rem;
+        aspect-ratio: 1;
+        cursor: pointer;
+    }
+    .mobile-nav-toggle::before,
+    .mobile-nav-toggle::after {
+        content: ''; position: absolute; width: 100%; height: 3px;
+        background: var(--text-light); border-radius: 5px; left: 0;
+        transition: all 0.3s ease-out;
     }
     .mobile-nav-toggle::before { top: 25%; }
     .mobile-nav-toggle::after { top: 65%; }
 
-    /* Main Overlay Container */
     .mobile-nav-overlay {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between; /* Pushes footer to bottom */
-        position: fixed;
-        z-index: 10000;
-        inset: 0;
+        display: flex; flex-direction: column; justify-content: space-between;
+        position: fixed; z-index: 10000; inset: 0;
         background-color: var(--bg-color);
-        
-        /* Animation */
-        transform: translateX(-100%);
+        transform: translateX(100%);
         transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
     }
-    
     .mobile-nav__header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 1rem 1.5rem;
-        border-bottom: 1px solid var(--border-color);
-        width: 100%;
+        display: flex; justify-content: space-between; align-items: center;
+        padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-color); width: 100%;
     }
     .mobile-nav__close-btn {
         background: none; border: none; color: var(--text-muted); font-size: 2rem;
@@ -2543,72 +2550,34 @@ body.fade-out { opacity: 0; transition: opacity 0.4s ease-out; }
     }
     .mobile-nav__close-btn:hover { color: var(--text-light); transform: rotate(90deg); }
 
-    /* Polished Navigation List */
-    .mobile-nav ul {
-        list-style: none;
-        padding: 0;
-        text-align: right;
-    }
-    .mobile-nav li {
-        overflow: hidden; /* For the slide-in animation */
-    }
+    .mobile-nav ul { list-style: none; padding: 0; text-align: right; margin: 2rem 0; }
+    .mobile-nav li { overflow: hidden; }
     .mobile-nav a {
-        display: block;
-        color: var(--text-muted);
-        text-decoration: none;
-        font-family: var(--font-headings);
-        font-size: 2.5rem;
-        padding: 0.75rem 2rem;
-        transition: color 0.3s ease;
+        display: flex; flex-direction: column; align-items: flex-start;
+        color: var(--text-light); text-decoration: none; padding: 1rem 2rem;
         transform: translateY(100%);
-        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease;
     }
-    .mobile-nav a:hover {
-        color: var(--text-light);
-    }
-    .mobile-nav a span {
-        font-family: var(--font-primary);
-        font-size: 1rem;
-        color: var(--primary-color);
-        margin-left: 1rem;
-    }
+    .mobile-nav a:hover { background-color: var(--surface-color); }
+    .mobile-nav a span { font-family: var(--font-headings); font-size: 2.2rem; }
+    .mobile-nav a small { font-family: var(--font-primary); font-size: 0.9rem; color: var(--text-muted); }
+    .mobile-nav__footer { padding: 2rem; border-top: 1px solid var(--border-color); }
+    .mobile-nav__footer .social-links { justify-content: center; }
 
-    .mobile-nav__footer {
-        padding: 2rem;
-        border-top: 1px solid var(--border-color);
-    }
-    .mobile-nav__footer .social-links {
-        justify-content: center;
-    }
-
-    /* --- "OPEN" STATE STYLES --- */
-    body.nav-is-open .mobile-nav-overlay {
-        transform: translateX(0);
-    }
-
-    /* Staggered slide-in animation for links */
-    body.nav-is-open .mobile-nav a {
-        transform: translateY(0);
-    }
+    body.nav-is-open .mobile-nav-overlay { transform: translateX(0); }
+    body.nav-is-open .mobile-nav a { transform: translateY(0); }
     body.nav-is-open .mobile-nav li:nth-child(2) a { transition-delay: 0.05s; }
     body.nav-is-open .mobile-nav li:nth-child(3) a { transition-delay: 0.1s; }
     body.nav-is-open .mobile-nav li:nth-child(4) a { transition-delay: 0.15s; }
     body.nav-is-open .mobile-nav li:nth-child(5) a { transition-delay: 0.2s; }
+    body.nav-is-open .mobile-nav li:nth-child(6) a { transition-delay: 0.25s; }
     
-    body.nav-is-open .mobile-nav-toggle {
-        opacity: 0; /* Hide the hamburger when menu is open */
-    }
-
-    body.nav-is-open {
-        overflow: hidden;
-    }
-
-    /* Other responsive adjustments */
-    .contact__content-overlay {
-        transform: translateX(0);
-        background: linear-gradient(0deg, rgba(18, 18, 18, 1) 40%, transparent 100%);
-        justify-content: flex-end;
-        padding: 30px;
-        text-align: center;
-    }
+    body.nav-is-open .mobile-nav-toggle { opacity: 0; pointer-events: none; }
+    body.nav-is-open { overflow: hidden; }
 }
+/* انیمیشن محو شدن برای انتقال بین صفحات */
+body.fade-out {
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+
+}}

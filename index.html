@@ -4,9 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>کافه نت کارنت | خدمات آنلاین حرفه‌ای</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
-    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    
     <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="icon" type="image/png" href="images/logo.webp">
 </head>
 <body>
@@ -17,14 +21,14 @@
                 <span class="logo-text">کارنت</span>
             </a>
             <nav class="header__nav">
-                 <ul>
-        <li><a href="index.html" ><span>صفحه اصلی</span></a></li>
-        <li><a href="services.html"><span> خدمات انلاین</span></a></li>
-        <li><a href="articles.html"><span>وبلاگ ها</span></a></li>
-        <li><a href="index.html#about-us"><span>درباره ما</span></a></li>
-        <li><a href="faq.html"><span>سوالات متداول</span></a></li>
-        <li><a href="promotions.html"><span>تخفیفات</span></a></li>
-            </ul>
+                <ul>
+                    <li><a href="index.html"><span>صفحه اصلی</span></a></li>
+                    <li><a href="services.html"><span>خدمات آنلاین</span></a></li>
+                    <li><a href="promotions.html"><span>تخفیفات</span></a></li>
+                    <li><a href="articles.html"><span>وبلاگ‌ها</span></a></li>
+                    <li><a href="index.html#about-us"><span>درباره ما</span></a></li>
+                    <li><a href="faq.html"><span>سوالات متداول</span></a></li>
+                </ul>
             </nav>
             <div class="header__actions">
                 <button class="mobile-nav-toggle" aria-controls="mobile-menu" aria-expanded="false"><span class="sr-only">Menu</span></button>
@@ -32,18 +36,31 @@
         </div>
     </header>
 
-    <div class="mobile-nav-overlay" id="mobile-menu" data-visible="false">
-         <button class="mobile-nav__close-btn" aria-label="بستن منو"><i class="ph-bold ph-x"></i></button>
-    <nav class="mobile-nav">
-             <ul>
-        <li><a href="index.html" ><span>صفحه اصلی</span></a></li>
-        <li><a href="services.html"><span> خدمات انلاین</span></a></li>
-        <li><a href="articles.html"><span>وبلاگ ها</span></a></li>
-        <li><a href="index.html#about-us"><span>درباره ما</span></a></li>
-        <li><a href="faq.html"><span>سوالات متداول</span></a></li>
-        <li><a href="promotions.html"><span>تخفیفات</span></a></li>
+    <div class="mobile-nav-overlay" id="mobile-menu">
+        <div class="mobile-nav__header">
+            <a href="index.html" class="header__logo">
+                <img src="images/logo.webp" alt="آیکون کافه نت کارنت">
+                <span class="logo-text">کارنت</span>
+            </a>
+            <button class="mobile-nav__close-btn" aria-label="بستن منو"><i class="ph-bold ph-x"></i></button>
+        </div>
+        <nav class="mobile-nav">
+            <ul>
+                <li><a href="index.html"><span>صفحه اصلی</span><small>بازگشت به خانه</small></a></li>
+                <li><a href="services.html"><span>خدمات آنلاین</span><small>لیست کامل خدمات ما</small></a></li>
+                <li><a href="promotions.html"><span>تخفیفات</span><small>فرصت‌های ویژه و جوایز</small></a></li>
+                <li><a href="articles.html"><span>وبلاگ‌ها</span><small>دانستنی‌ها و آموزش‌ها</small></a></li>
+                <li><a href="index.html#about-us"><span>درباره ما</span><small>آشنایی با تیم کارنت</small></a></li>
+                <li><a href="faq.html"><span>سوالات متداول</span><small>پاسخ به پرسش‌های شما</small></a></li>
             </ul>
         </nav>
+        <div class="mobile-nav__footer">
+            <div class="social-links">
+                 <a href="tel:+989305649714" class="social-links__item"><i class="ph-bold ph-phone-call"></i></a>
+                 <a href="https://t.me/@cafenetcarneet" target="_blank" class="social-links__item"><i class="ph-bold ph-telegram-logo"></i></a>
+                 <a href="https://www.instagram.com/cafe_net_carnet?igsh=d3p4d2g1Mncwbzc3" target="_blank" class="social-links__item"><i class="ph-bold ph-instagram-logo"></i></a>
+            </div>
+        </div>
     </div>
    
         <section class="hero">
@@ -156,26 +173,7 @@
             </div>
         </section>
         
-        <section class="faq" id="faq">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">سوالات متداول</h2>
-                <div class="accordion animate-on-scroll animate-delay-1">
-                    <div class="accordion__item">
-                        <button class="accordion__header"><span>مدت زمان لازم برای ثبت نام وام چقدر است؟</span><i class="ph-bold ph-plus accordion__icon"></i></button>
-                        <div class="accordion__content"><div class="accordion__content-inner"><p>بسته به نوع وام و شلوغی سامانه، ثبت نام اولیه معمولاً در کمتر از ۲۴ ساعت کاری انجام می‌شود. مراحل بعدی مانند تعیین شعبه، به بانک مربوطه بستگی دارد.</p></div></div>
-                    </div>
-                    <div class="accordion__item">
-                        <button class="accordion__header"><span>آیا اطلاعات و مدارک من در امان هستند؟</span><i class="ph-bold ph-plus accordion__icon"></i></button>
-                        <div class="accordion__content"><div class="accordion__content-inner"><p>بله، امنیت اطلاعات شما اولویت اصلی ماست. ما از پروتکل‌های امن برای دریافت و مدیریت اطلاعات استفاده می‌کنیم و پس از انجام خدمات، هیچ اطلاعاتی نزد ما باقی نمی‌ماند.</p></div></div>
-                    </div>
-                    <div class="accordion__item">
-                        <button class="accordion__header"><span>هزینه خدمات چگونه محاسبه می‌شود؟</span><i class="ph-bold ph-plus accordion__icon"></i></button>
-                        <div class="accordion__content"><div class="accordion__content-inner"><p>هزینه هر خدمت بر اساس پیچیدگی و زمان مورد نیاز برای انجام آن تعیین می‌شود. شما می‌توانید قبل از ثبت سفارش نهایی، هزینه دقیق را از ما استعلام بگیرید.</p></div></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
+       
         <section class="licenses">
             <div class="container">
                 <h2 class="section-title animate-on-scroll">مجوزها و نمادهای اعتماد</h2>
@@ -193,7 +191,7 @@
                 </div>
             </div>
         </section>
-    </main>
+    
     
 <div class="widget-container">
     <div class="quick-contact-widget" id="quickContactWidget">
