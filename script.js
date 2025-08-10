@@ -1,8 +1,9 @@
 document.addEventListener('DOMContentLoaded', () => {
 
     // --- 1. کنترل منوی موبایل حرفه‌ای ---
-      const navToggle = document.querySelector('.mobile-nav-toggle');
-    const navOverlay = document.querySelector('.mobile-nav-overlay');
+       // --- کنترل نهایی منوی موبایل (مدل تلگرام) ---
+  const navToggle = document.querySelector('.mobile-nav-toggle');
+    const navOverlay = document.querySelector('.mobile-nav-drawer-overlay');
     const navCloseBtn = document.querySelector('.mobile-nav__close-btn');
     const bodyEl = document.body;
 
@@ -14,14 +15,35 @@ document.addEventListener('DOMContentLoaded', () => {
         navToggle.addEventListener('click', toggleMenu);
         navCloseBtn.addEventListener('click', toggleMenu);
         
-        const mobileLinks = navOverlay.querySelectorAll('a');
-        mobileLinks.forEach(link => {
-            // اگر لینک به بخش دیگری از همین صفحه بود، با کلیک منو را ببند
-            if (link.getAttribute('href') && link.getAttribute('href').includes('#')) {
-                link.addEventListener('click', toggleMenu);
+        navOverlay.addEventListener('click', (e) => {
+            if (e.target === navOverlay) {
+                toggleMenu();
             }
         });
     }
+
+    // --- ۲. هایلایت کردن لینک فعال در هر دو منو (دسکتاپ و موبایل) ---
+    try {
+        const currentPath = window.location.pathname.split("/").pop() || 'index.html';
+        const navLinks = document.querySelectorAll('.header__nav a, .mobile-nav a');
+
+        navLinks.forEach(link => {
+            const linkPath = link.getAttribute('href').split("/").pop() || 'index.html';
+            
+            // ابتدا تمام کلاس‌های فعال را حذف می‌کنیم تا تداخلی نباشد
+            link.classList.remove('nav__link--active');
+            
+            // اگر لینک مربوط به صفحه فعلی بود، کلاس را اضافه می‌کنیم
+            if (linkPath === currentPath) {
+                link.classList.add('nav__link--active');
+            }
+        });
+    } catch (e) {
+        console.error("Error highlighting active link:", e);
+    }
+
+    // --- بقیه کدهای شما اینجا قرار می‌گیرند ---
+    // ...
 
     // --- بقیه کدهای شما (آکاردئون، ویجت و ...) در اینجا قرار می‌گیرند ---
     // ...
