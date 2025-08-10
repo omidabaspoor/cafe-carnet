@@ -1,29 +1,42 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- 1. منوی موبایل با دکمه بستن ---
-// --- 1. منوی موبایل نهایی و بهینه ---
-const navToggle = document.querySelector('.mobile-nav-toggle');
-const closeBtn = document.querySelector('.mobile-nav__close-btn');
-const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
-const bodyEl = document.body;
+    // --- 1. منوی موبایل نهایی و بهینه ---
+    const navToggle = document.querySelector('.mobile-nav-toggle');
+    const mobileNavOverlay = document.querySelector('.mobile-nav-overlay');
+    const bodyEl = document.body;
+    const mobileNavLinks = document.querySelectorAll('.mobile-nav a');
 
+    // === کد جدید برای انتخاب دکمه بستن ===
+    const closeNavBtn = document.querySelector('.mobile-nav__close-btn'); 
 
-// یک تابع برای باز و بسته کردن منو
-function toggleMenu() {
-    bodyEl.classList.toggle('nav-is-open');
-}
-
-// فقط در صورتی که دکمه همبرگری وجود دارد، event listener ها را اضافه کن
-if (navToggle) {
-    navToggle.addEventListener('click', toggleMenu);
-    
-    if (closeBtn) {
-        closeBtn.addEventListener('click', toggleMenu);
+    // تابع برای باز و بسته کردن منو
+    function toggleMenu() {
+        // ... (این تابع بدون تغییر باقی می‌ماند)
+        if (bodyEl.classList.contains('nav-is-open')) {
+            bodyEl.classList.remove('nav-is-open');
+            if (navToggle) navToggle.setAttribute('aria-expanded', 'false');
+            if (mobileNavOverlay) mobileNavOverlay.setAttribute('data-visible', 'false');
+        } else {
+            bodyEl.classList.add('nav-is-open');
+            if (navToggle) navToggle.setAttribute('aria-expanded', 'true');
+            if (mobileNavOverlay) mobileNavOverlay.setAttribute('data-visible', 'true');
+        }
     }
 
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', toggleMenu);
-    });
-}
+    if (navToggle && mobileNavOverlay) {
+        navToggle.addEventListener('click', toggleMenu);
+        
+        // === کد جدید برای فعال‌سازی دکمه بستن ===
+        if (closeNavBtn) {
+            closeNavBtn.addEventListener('click', toggleMenu);
+        }
+
+        mobileNavLinks.forEach(link => {
+            link.addEventListener('click', toggleMenu);
+        });
+    }
+
+    // ... (بقیه کدهای جاوا اسکریپت شما)
+
     // --- 2. ویجت چت (ارتباط با ما) ---
     const chatWidget = document.querySelector('.chat-widget');
     if (chatWidget) {
@@ -159,21 +172,21 @@ if (navToggle) {
             }
         });
     }
-});  const currentPath = window.location.pathname.split("/").pop();
-    
-    // Select all navigation links from both desktop and mobile menus
+
+    // --- 8. SMART NAVIGATION: Active Link Highlighter ---
+    const currentPath = window.location.pathname.split("/").pop(); // Gets the current file name, e.g., "services.html"
     const navLinks = document.querySelectorAll('.header__nav a, .mobile-nav a');
 
     navLinks.forEach(link => {
         const linkPath = link.getAttribute('href').split("/").pop();
 
-        // First, remove any active class to reset the state
-        link.classList.remove('nav__link--active');
-
-        // Check for a match
-        // Condition 1: The link's path is exactly the same as the current page's path.
-        // Condition 2: If we are on the root page (currentPath is ""), highlight "index.html".
-        if (linkPath === currentPath || (currentPath === '' && (linkPath === 'index.html' || linkPath === ''))) {
+        // Check if the link path matches the current path.
+        // Also handle the homepage case where the path might be empty.
+        if (linkPath === currentPath || (currentPath === '' && linkPath === 'index.html')) {
             link.classList.add('nav__link--active');
+        } else {
+            link.classList.remove('nav__link--active');
         }
     });
+
+}); // This is the closing bracket and parenthesis of your DOMContentLoaded

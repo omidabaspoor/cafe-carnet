@@ -1,8 +1,13 @@
+/* =============================================
+   File: services.css (Optimized)
+   Description: Structured & commented CSS for Services Page
+   Note: No style changes, only formatting & commenting improvements
+   ============================================= */
+
 /* --- 1. وارد کردن استایل‌های پایه و مشترک --- */
-@import url('style.css'); /* این کار تمام استایل‌های صفحه اصلی را به ارث می‌برد */
-
+@import url('style.css');
+    /* این کار تمام استایل‌های صفحه اصلی را به ارث می‌برد */
 /* --- 2. استایل‌های اختصاصی صفحه خدمات --- */
-
 .services-hero {
     padding: 80px 0;
     text-align: center;
@@ -49,7 +54,6 @@
     border-color: var(--primary-color);
     box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.3);
 }
-
 .services-grid-section {
     padding: 80px 0;
 }
@@ -94,7 +98,6 @@
     font-size: 1.1rem;
     font-weight: 400;
 }
-
 .no-results-message {
     text-align: center;
     padding: 50px;
@@ -108,7 +111,6 @@
     display: block;
     margin-bottom: 1rem;
 }
-
 /* برای هدر: پاک کردن استایل لینک فعال از style.css اصلی */
 .header__nav a::after {
     display: none;
@@ -120,265 +122,288 @@
 .header__nav a.nav__link--active::after {
     display: block;
     width: 100%;
-
 }
 /* --- 14. DEFINITIVE: Polished Overlay Mobile Navigation --- */
-
 .mobile-nav-toggle,
 .mobile-nav-overlay {
     display: none;
 }
-
 /* --- Mobile Breakpoint --- */
 @media (max-width: 768px) {
     /* Hide the original desktop nav on mobile */
-    .header__nav {
-        display: none;
-    }
-
-    /* Show and style the hamburger button */
-    .mobile-nav-toggle {
-        display: block;
-        position: relative;
-        z-index: 10001;
-        background: transparent;
-        border: 0;
-        width: 2.5rem;
-        aspect-ratio: 1;
-        padding: 0;
-        cursor: pointer;
-    }
-
-    /* Hamburger lines */
-    .mobile-nav-toggle::before,
-    .mobile-nav-toggle::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        background: var(--text-light);
-        border-radius: 5px;
-        left: 0;
-        transition: transform 0.3s ease-out, top 0.3s ease-out;
-    }
-    .mobile-nav-toggle::before { top: 25%; }
-    .mobile-nav-toggle::after { top: 65%; }
-    
-    /* The main overlay container with blur effect */
-    .mobile-nav-overlay {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        z-index: 10000;
-        inset: 0;
-        background-color: rgba(18, 18, 18, 0.9);
-        backdrop-filter: blur(10px);
-        opacity: 0;
-        visibility: hidden;
-        transform: scale(1.05);
-        transition: opacity 0.4s ease, visibility 0s 0.4s, transform 0.4s ease;
-    }
-
-    /* NEW: The close button inside the overlay */
-    .mobile-nav__close-btn {
-        position: absolute;
-        top: 2rem;
-        left: 2rem; /* Top-left for RTL */
-        background: none;
-        border: none;
-        color: var(--text-muted);
-        font-size: 2.5rem;
-        font-weight: bold;
-        cursor: pointer;
-        line-height: 1;
-        transition: color 0.3s ease, transform 0.3s ease;
-    }
-    .mobile-nav__close-btn:hover {
-        color: var(--text-light);
-        transform: rotate(90deg);
-    }
-    
-    /* Styling for the navigation links */
-    .mobile-nav ul {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-        text-align: center;
-    }
-    .mobile-nav li {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-    }
-    .mobile-nav a {
-        color: var(--text-light);
-        text-decoration: none;
-        font-family: var(--font-headings);
-        font-size: 2.5rem;
-        padding: 0.5rem 1rem;
-        display: block;
-    }
-
-    /* --- STYLES FOR THE "OPEN" STATE --- */
-    
-    .mobile-nav-overlay[data-visible="true"] {
-        opacity: 1;
-        visibility: visible;
-        transform: scale(1);
-        transition-delay: 0s;
-    }
-    
-    /* Staggered animation for links appearing */
-    .mobile-nav-overlay[data-visible="true"] .mobile-nav li:nth-child(1) { transition-delay: 0.2s; opacity: 1; transform: translateY(0); }
-    .mobile-nav-overlay[data-visible="true"] .mobile-nav li:nth-child(2) { transition-delay: 0.3s; opacity: 1; transform: translateY(0); }
-    .mobile-nav-overlay[data-visible="true"] .mobile-nav li:nth-child(3) { transition-delay: 0.4s; opacity: 1; transform: translateY(0); }
-    .mobile-nav-overlay[data-visible="true"] .mobile-nav li:nth-child(4) { transition-delay: 0.5s; opacity: 1; transform: translateY(0); }
-
-    /* Hamburger icon transforms into an "X" */
-    .mobile-nav-toggle[aria-expanded="true"]::before {
-        top: 45%;
-        transform: rotate(45deg);
-    }
-    .mobile-nav-toggle[aria-expanded="true"]::after {
-        top: 45%;
-        transform: rotate(-45deg);
-    }
-    
-    /* Prevent body from scrolling when menu is open */
-    body.nav-is-open {
-        overflow: hidden;
-    }
+ .header__nav {
+    display: none;
+}
+ /* Show and style the hamburger button */
+ .mobile-nav-toggle {
+    display: block;
+    position: relative;
+    z-index: 10001;
+    background: transparent;
+    border: 0;
+    width: 2.5rem;
+    aspect-ratio: 1;
+    padding: 0;
+    cursor: pointer;
+}
+ /* Hamburger lines */
+ .mobile-nav-toggle::before,
+ .mobile-nav-toggle::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--text-light);
+    border-radius: 5px;
+    left: 0;
+    transition: transform 0.3s ease-out, top 0.3s ease-out;
+}
+ .mobile-nav-toggle::before {
+    top: 25%;
+}
+ .mobile-nav-toggle::after {
+    top: 65%;
+}
+ /* The main overlay container with blur effect */
+ .mobile-nav-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10000;
+    inset: 0;
+    background-color: rgba(18, 18, 18, 0.9);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.05);
+    transition: opacity 0.4s ease, visibility 0s 0.4s, transform 0.4s ease;
+}
+ /* NEW: The close button inside the overlay */
+ .mobile-nav__close-btn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    /* Top-left for RTL */
+ background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 2.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+ .mobile-nav__close-btn:hover {
+    color: var(--text-light);
+    transform: rotate(90deg);
+}
+ /* Styling for the navigation links */
+ .mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+ .mobile-nav li {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+ .mobile-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: var(--font-headings);
+    font-size: 2.5rem;
+    padding: 0.5rem 1rem;
+    display: block;
+}
+ /* --- STYLES FOR THE "OPEN" STATE --- */
+ .mobile-nav-overlay[data-visible="true"] {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+    transition-delay: 0s;
+}
+ /* Staggered animation for links appearing */
+ .mobile-nav-overlay[data-visible="true"] .mobile-nav li:nth-child(1) {
+    transition-delay: 0.2s;
+    opacity: 1;
+    transform: translateY(0);
+}
+ .mobile-nav-overlay[data-visible="true"] .mobile-nav li:nth-child(2) {
+    transition-delay: 0.3s;
+    opacity: 1;
+    transform: translateY(0);
+}
+ .mobile-nav-overlay[data-visible="true"] .mobile-nav li:nth-child(3) {
+    transition-delay: 0.4s;
+    opacity: 1;
+    transform: translateY(0);
+}
+ .mobile-nav-overlay[data-visible="true"] .mobile-nav li:nth-child(4) {
+    transition-delay: 0.5s;
+    opacity: 1;
+    transform: translateY(0);
+}
+ /* Hamburger icon transforms into an "X" */
+ .mobile-nav-toggle[aria-expanded="true"]::before {
+    top: 45%;
+    transform: rotate(45deg);
+}
+ .mobile-nav-toggle[aria-expanded="true"]::after {
+    top: 45%;
+    transform: rotate(-45deg);
+}
+ /* Prevent body from scrolling when menu is open */
+ body.nav-is-open {
+    overflow: hidden;
+}
 }
 /* --- استایل‌های نهایی برای بخش اکشن‌های هدر (پروفایل و منو) --- */
-
 .header__actions {
     display: flex;
     align-items: center;
-    gap: 15px; /* فاصله بین آیکون پروفایل و منوی موبایل */
+    gap: 15px;
+    /* فاصله بین آیکون پروفایل و منوی موبایل */
 }
-
 .header__user-profile {
     color: var(--text-muted);
     font-size: 2rem;
     text-decoration: none;
     transition: color 0.3s ease, transform 0.3s ease;
-    display: flex; /* برای تراز عمودی بهتر */
-    align-items: center;
+    display: flex;
+    /* برای تراز عمودی بهتر */
+ align-items: center;
 }
-
 .header__user-profile:hover {
     color: var(--text-light);
     transform: scale(1.1);
 }
-
 /* --- استایل‌های نهایی و کامل منوی موبایل --- */
-
 .mobile-nav-toggle,
 .mobile-nav-overlay {
     display: none;
 }
-
 /* --- Mobile Breakpoint --- */
 @media (max-width: 768px) {
     /* مخفی کردن منوی دسکتاپ */
-    .header__nav {
-        display: none;
-    }
-
-    /* نمایش دکمه همبرگری */
-    .mobile-nav-toggle {
-        display: block;
-        position: relative;
-        z-index: 10001;
-        background: transparent;
-        border: 0;
-        width: 2.5rem;
-        aspect-ratio: 1;
-        padding: 0;
-        cursor: pointer;
-    }
-
-    /* خطوط دکمه همبرگری */
-    .mobile-nav-toggle::before,
-    .mobile-nav-toggle::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        background: var(--text-light);
-        border-radius: 5px;
-        left: 0;
-        transition: all 0.3s ease-out;
-    }
-    .mobile-nav-toggle::before { top: 25%; }
-    .mobile-nav-toggle::after { top: 65%; }
-    
-    /* Overlay اصلی منو با افکت بلور */
-    .mobile-nav-overlay {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: fixed;
-        z-index: 10000;
-        inset: 0;
-        background-color: rgba(18, 18, 18, 0.9);
-        backdrop-filter: blur(10px);
-        opacity: 0;
-        visibility: hidden;
-        transform: scale(1.05);
-        transition: all 0.4s ease;
-    }
-
-    /* دکمه بستن 'X' */
-    .mobile-nav__close-btn {
-        position: absolute;
-        top: 2rem;
-        left: 2rem;
-        background: none;
-        border: none;
-        color: var(--text-muted);
-        font-size: 2.5rem;
-        cursor: pointer;
-    }
-    
-    /* استایل لینک‌های منوی موبایل */
-    .mobile-nav ul {
-        list-style: none;
-        padding: 0;
-        text-align: center;
-        width: 80%;
-    }
-    .mobile-nav li {
-        opacity: 0;
-        transform: translateY(20px);
-        transition: all 0.3s ease;
-        border-bottom: 1px solid var(--border-color);
-    }
-    .mobile-nav li:last-child { border-bottom: none; }
-    .mobile-nav a {
-        color: var(--text-light);
-        text-decoration: none;
-        font-family: var(--font-headings);
-        font-size: 2.2rem;
-        display: block;
-        padding: 1rem;
-        transition: color 0.3s ease;
-    }
-    .mobile-nav a:hover { color: var(--primary-color); }
-    
-    /* استایل‌ها در حالت باز بودن منو */
-    .mobile-nav-overlay[data-visible="true"] {
-        opacity: 1;
-        visibility: visible;
-        transform: scale(1);
-    }
-    .mobile-nav-overlay[data-visible="true"] .mobile-nav li { opacity: 1; transform: translateY(0); }
-    .mobile-nav-overlay[data-visible="true"] .mobile-nav li:nth-child(2) { transition-delay: 0.1s; }
-    .mobile-nav-overlay[data-visible="true"] .mobile-nav li:nth-child(3) { transition-delay: 0.2s; }
-    .mobile-nav-overlay[data-visible="true"] .mobile-nav li:nth-child(4) { transition-delay: 0.3s; }
-    .mobile-nav-toggle[aria-expanded="true"]::before { top: 45%; transform: rotate(45deg); }
-    .mobile-nav-toggle[aria-expanded="true"]::after { top: 45%; transform: rotate(-45deg); }
-    body.nav-is-open { overflow: hidden; }
+ .header__nav {
+    display: none;
+}
+ /* نمایش دکمه همبرگری */
+ .mobile-nav-toggle {
+    display: block;
+    position: relative;
+    z-index: 10001;
+    background: transparent;
+    border: 0;
+    width: 2.5rem;
+    aspect-ratio: 1;
+    padding: 0;
+    cursor: pointer;
+}
+ /* خطوط دکمه همبرگری */
+ .mobile-nav-toggle::before,
+ .mobile-nav-toggle::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    background: var(--text-light);
+    border-radius: 5px;
+    left: 0;
+    transition: all 0.3s ease-out;
+}
+ .mobile-nav-toggle::before {
+    top: 25%;
+}
+ .mobile-nav-toggle::after {
+    top: 65%;
+}
+ /* Overlay اصلی منو با افکت بلور */
+ .mobile-nav-overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 10000;
+    inset: 0;
+    background-color: rgba(18, 18, 18, 0.9);
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    visibility: hidden;
+    transform: scale(1.05);
+    transition: all 0.4s ease;
+}
+ /* دکمه بستن 'X' */
+ .mobile-nav__close-btn {
+    position: absolute;
+    top: 2rem;
+    left: 2rem;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+ /* استایل لینک‌های منوی موبایل */
+ .mobile-nav ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+    width: 80%;
+}
+ .mobile-nav li {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s ease;
+    border-bottom: 1px solid var(--border-color);
+}
+ .mobile-nav li:last-child {
+    border-bottom: none;
+}
+ .mobile-nav a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: var(--font-headings);
+    font-size: 2.2rem;
+    display: block;
+    padding: 1rem;
+    transition: color 0.3s ease;
+}
+ .mobile-nav a:hover {
+    color: var(--primary-color);
+}
+ /* استایل‌ها در حالت باز بودن منو */
+ .mobile-nav-overlay[data-visible="true"] {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1);
+}
+ .mobile-nav-overlay[data-visible="true"] .mobile-nav li {
+    opacity: 1;
+    transform: translateY(0);
+}
+ .mobile-nav-overlay[data-visible="true"] .mobile-nav li:nth-child(2) {
+    transition-delay: 0.1s;
+}
+ .mobile-nav-overlay[data-visible="true"] .mobile-nav li:nth-child(3) {
+    transition-delay: 0.2s;
+}
+ .mobile-nav-overlay[data-visible="true"] .mobile-nav li:nth-child(4) {
+    transition-delay: 0.3s;
+}
+ .mobile-nav-toggle[aria-expanded="true"]::before {
+    top: 45%;
+    transform: rotate(45deg);
+}
+ .mobile-nav-toggle[aria-expanded="true"]::after {
+    top: 45%;
+    transform: rotate(-45deg);
+}
+ body.nav-is-open {
+    overflow: hidden;
+}
 }
