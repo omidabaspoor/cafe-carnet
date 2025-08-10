@@ -2506,7 +2506,7 @@ body.fade-out { opacity: 0; transition: opacity 0.4s ease-out; }
 
     /* استایل دکمه همبرگری */
 /* ======================================================== */
-/* === استایل‌های ریسپانسیو (منوی نهایی با چیدمان ضد-همپوشانی) === */
+/* === استایل‌های ریسپانسیو (منوی نهایی، تک‌خطی و شیک) === */
 /* ======================================================== */
 
 .mobile-nav-toggle,
@@ -2562,40 +2562,39 @@ body.fade-out { opacity: 0; transition: opacity 0.4s ease-out; }
         list-style: none; padding: 0; margin: 0;
     }
     
-    /* === اصلاح کلیدی و نهایی برای لینک‌ها === */
+    /* === استایل نهایی و شیک برای هر لینک === */
     .mobile-nav a {
         display: flex;
-        align-items: center;
+        align-items: center;  /* تراز عمودی آیکون و متن */
+        gap: 1.2rem;          /* فاصله بین آیکون و متن */
         width: 100%;
-        padding: 1rem 1.5rem; /* پدینگ بهینه شده */
+        padding: 1rem 1.5rem; /* پدینگ استاندارد */
         text-decoration: none;
         color: var(--text-light);
-        transition: background-color 0.3s ease;
+        transition: background-color 0.2s ease;
     }
     .mobile-nav a:hover {
         background-color: var(--surface-color);
     }
 
-    /* ۱. تعریف فضای ثابت برای آیکون */
+    /* استایل آیکون */
     .mobile-nav a i {
-        flex-shrink: 0; /* مهم: آیکون هرگز کوچک نمی‌شود */
-        width: 30px;    /* یک عرض ثابت برای آیکون */
         font-size: 1.4rem;
         color: var(--text-muted);
-        transition: color 0.3s ease;
-        margin-left: 1rem; /* فاصله از متن */
+        transition: color 0.2s ease;
     }
 
-    /* ۲. تعریف فضای متغیر برای متن */
+    /* استایل متن (جمع و جور و خوانا) */
     .mobile-nav a span {
-        flex-grow: 1; /* مهم: متن بقیه فضا را پر می‌کند */
         font-family: var(--font-primary);
         font-weight: 500;
-        font-size: 1rem; /* اندازه استاندارد و خوانا */
-        line-height: 1.5;
+        font-size: 1rem; /* اندازه کاملا استاندارد */
     }
     
-    /* ۳. استایل لینک فعال */
+    /* استایل لینک فعال */
+    .mobile-nav a.nav__link--active {
+        background-color: var(--surface-color);
+    }
     .mobile-nav a.nav__link--active span,
     .mobile-nav a.nav__link--active i {
         color: var(--primary-color);
@@ -2605,5 +2604,5 @@ body.fade-out { opacity: 0; transition: opacity 0.4s ease-out; }
     body.nav-is-open .mobile-nav-overlay { transform: translateX(0); }
     body.nav-is-open .mobile-nav-toggle { opacity: 0; pointer-events: none; }
     body.nav-is-open { overflow: hidden; }
-
-}}
+}
+}
