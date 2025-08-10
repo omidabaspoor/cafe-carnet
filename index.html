@@ -1,18 +1,21 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>کافه نت کارنت | خدمات آنلاین حرفه‌ای</title>
-    
+
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Vazirmatn:wght@300;400;700&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
     <link rel="icon" type="image/png" href="images/logo.webp">
 </head>
+
 <body>
     <header class="header">
         <div class="container header__container">
@@ -31,14 +34,19 @@
                 </ul>
             </nav>
             <div class="header__actions">
-                <button class="mobile-nav-toggle" aria-controls="mobile-menu" aria-expanded="false"><span class="sr-only">Menu</span></button>
+                <button class="mobile-nav-toggle" aria-controls="mobile-menu" aria-expanded="false"><span
+                        class="sr-only">Menu</span></button>
             </div>
         </div>
     </header>
 
-   <!-- ساختار نهایی و ساده‌شده منوی موبایل -->
+    <!-- ساختار نهایی و ساده‌شده منوی موبایل -->
+  <!-- ============================================= -->
+<!-- === ساختار نهایی و حرفه‌ای منوی موبایل === -->
+<!-- ============================================= -->
 <div class="mobile-nav-overlay" id="mobile-menu">
     
+    <!-- هدر منو با لوگو و دکمه بستن -->
     <div class="mobile-nav__header">
         <a href="index.html" class="header__logo">
             <img src="images/logo.webp" alt="آیکون کافه نت کارنت">
@@ -47,7 +55,7 @@
         <button class="mobile-nav__close-btn" aria-label="بستن منو"><i class="ph-bold ph-x"></i></button>
     </div>
 
-    <!-- بدنه اصلی منو با آیکون و لینک‌های تک‌خطی -->
+    <!-- بدنه اصلی منو با لینک‌ها -->
     <nav class="mobile-nav">
         <ul>
             <li><a href="index.html"><i class="ph-bold ph-house"></i><span>صفحه اصلی</span></a></li>
@@ -59,152 +67,174 @@
         </ul>
     </nav>
     
-    </div>
+    <!-- فوتر منو با لینک‌های اجتماعی -->
    
-        <section class="hero">
-             <div class="hero__stars"></div>
-             <div class="container hero__container">
-                 <div class="hero__content">
-                     <h1 class="animate-on-load">کافی نت کارنت: دنیای دیجیتال در دستان شما</h1>
-                     <p class="animate-on-load animate-delay-1">دیگر نگران صف‌های طولانی و فرآیندهای پیچیده نباشید. ما با تخصص و سرعت، تمام خدمات اینترنتی شما را از ثبت‌نام‌های حساس تا امور روزمره، به بهترین شکل انجام می‌دهیم.</p>
-                     <a href="services.html" class="button button--glow animate-on-load animate-delay-2">خدمات انلاین  <i class="ph-bold ph-arrow-left"></i></a>
-                 </div>
-             </div>
-        </section>
-
-        <section class="features">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">چرا کارنت را انتخاب کنید؟</h2>
-                <div class="features__grid">
-                    <div class="feature-card animate-on-scroll">
-                        <div class="feature-card__icon"><i class="ph-bold ph-shield-check"></i></div>
-                        <h3 class="feature-card__title">امنیت و اطمینان</h3>
-                        <p class="feature-card__text">اطلاعات شما نزد ما امانت است. تمامی فرآیندها با بالاترین سطح امنیت انجام می‌شوند.</p>
-                    </div>
-                    <div class="feature-card animate-on-scroll animate-delay-1">
-                        <div class="feature-card__icon"><i class="ph-bold ph-rocket-launch"></i></div>
-                        <h3 class="feature-card__title">سرعت بی‌نظیر</h3>
-                        <p class="feature-card__text">زمان شما برای ما ارزشمند است. خدمات در کوتاه‌ترین زمان ممکن و با دقت کامل ارائه می‌گردند.</p>
-                    </div>
-                    <div class="feature-card animate-on-scroll animate-delay-2">
-                        <div class="feature-card__icon"><i class="ph-bold ph-headset"></i></div>
-                        <h3 class="feature-card__title">پشتیبانی تخصصی</h3>
-                        <p class="feature-card__text">از ابتدا تا انتهای فرآیند همراه شما هستیم و به تمام سوالات شما پاسخ می‌دهیم.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="promotions-section">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">جوایز داغ کارنت</h2>
-                <div class="promotions__grid">
-                    <div class="promotion-card animate-on-scroll">
-                        <div class="promotion-card__icon"><i class="ph-bold ph-printer"></i></div>
-                        <h3 class="promotion-card__title">هدیه چاپ</h3>
-                        <p class="promotion-card__text">با سفارش چاپ بیش از ۲۰۰ صفحه، ۵۰ صفحه بعدی را مهمان ما باشید!</p>
-                        <span class="promotion-card__expiry">همیشه معتبر</span>
-                    </div>
-                    <div class="promotion-card animate-on-scroll animate-delay-1">
-                        <div class="promotion-card__icon"><i class="ph-bold ph-student"></i></div>
-                        <h3 class="promotion-card__title">تخفیف تحصیلی</h3>
-                        <p class="promotion-card__text">از ۱۵٪ تا ۲۰٪ تخفیف ویژه برای تمام امور مربوط به ثبت‌نام کنکور و مدارس بهره‌مند شوید.</p>
-                        <span class="promotion-card__expiry">در فصل ثبت‌نام</span>
-                    </div>
-                    <div class="promotion-card animate-on-scroll animate-delay-2">
-                        <div class="promotion-card__icon"><i class="ph-bold ph-star"></i></div>
-                        <h3 class="promotion-card__title">پاداش وفاداری</h3>
-                        <p class="promotion-card__text">پس از انجام ۳ خدمت در کافی نت کارنت، ۱ خدمت بعدی را از ما هدیه بگیرید.</p>
-                        <span class="promotion-card__expiry">ویژه اعضای باشگاه مشتریان</span>
-                    </div>
-                </div>
-            </div>
-        </section>
-          <section class="about" id="about-us">
-            <div class="container about__container">
-                <div class="about__image animate-on-scroll">
-                    <img src="images/shop-interior.webp" alt="محیط داخلی کافه نت کارنت">
-                </div>
-                <div class="about__content animate-on-scroll animate-delay-1">
-                    <h2 class="section-title">درباره کارنت</h2>
-                    <p>کافی نت کارنت با هدف ارائه خدمات آنلاین سریع، دقیق و امن به همشهریان عزیز تاسیس شده است. ما می‌دانیم که زمان شما ارزشمند است و فرآیندهای اداری و اینترنتی می‌تواند پیچیده و وقت‌گیر باشد. تیم ما متشکل از افراد متخصص و با تجربه است که تمام امور شما، از ثبت‌نام‌های حساس دولتی گرفته تا کارهای روزمره دانشجویی و اداری را با بالاترین کیفیت انجام می‌دهد.</p>
-                    <p>هدف ما، تبدیل شدن به معتبرترین مرکز خدمات آنلاین در منطقه است، جایی که شما با خیال راحت می‌توانید تمام نیازهای دیجیتال خود را به ما بسپارید.</p>
-                </div>
-            </div>
-        </section>
-
-        <section class="about" id="about-us">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">راه‌های ارتباطی</h2>
-                <div class="about__wrapper animate-on-scroll">
-                    <div class="about__map">
-                        <iframe 
-                            src="https://maps.google.com/maps?q=35.013333,58.778056&hl=fa&z=17&amp;output=embed" 
-                            width="100%" 
-                            height="100%"
-                            style="border:0;" 
-                            allowfullscreen="" 
-                            loading="lazy" 
-                            referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
-                    <div class="about__content-overlay">
-                        <div class="about__text">
-                            <h3>آدرس و راه‌های ارتباطی</h3>
-                            <p class="about__address"><strong>آدرس:</strong> خراسان رضوی - مه ولات - فیض آباد - خیابان امام خمینی - روبرو بانک ملت</p>
-                            <p>برای ارتباط سریع، ما را در شبکه‌های اجتماعی دنبال کنید یا به صورت حضوری مراجعه فرمایید.</p>
-                             <a href="https://www.google.com/maps/dir/?api=1&destination=35.013333,58.778056" target="_blank" class="button button--navigate">
-                                <i class="ph-bold ph-diamond"></i>
-                                مسیریابی با نقشه
-                            </a>
-                        </div>
-                        <div class="social-links">
-                            <a href="tel:+989305649714" class="social-links__item" aria-label="تماس تلفنی"><i class="ph-bold ph-phone-call"></i></a>
-                            <a href="https://t.me/@cafenetcarneet" target="_blank" class="social-links__item" aria-label="تلگرام"><i class="ph-bold ph-telegram-logo"></i></a>
-                            <a href="https://www.instagram.com/cafe_net_carnet?igsh=d3p4d2g1Mncwbzc3" target="_blank" class="social-links__item" aria-label="اینستاگرام"><i class="ph-bold ph-instagram-logo"></i></a>
-                            <a href="https://rubika.ir/@Lhsysits" target="_blank" class="social-links__item" aria-label="روبیکا">
-                                <img src="images/rubika-logo.png" alt="لوگوی روبیکا" class="social-links__img-icon">
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-       
-        <section class="licenses">
-            <div class="container">
-                <h2 class="section-title animate-on-scroll">مجوزها و نمادهای اعتماد</h2>
-                <div class="licenses__grid animate-on-scroll animate-delay-1">
-                    <div class="license__item">
-                        <a href="#" target="_blank" aria-label="نماد اعتماد الکترونیکی">
-                            <img src="https://placehold.co/120x120/f0f0f0/1e1e1e?text=eNamad" alt="نماد اعتماد الکترونیکی (اینماد)">
-                        </a>
-                    </div>
-                    <div class="license__item">
-                         <a href="#" target="_blank" aria-label="نشان ملی ثبت رسانه های دیجیتال">
-                            <img src="https://placehold.co/120x120/f0f0f0/1e1e1e?text=Samandehi" alt="نشان ملی ثبت (ساماندهی)">
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    
-    
-<div class="widget-container">
-    <div class="quick-contact-widget" id="quickContactWidget">
-        <div class="quick-contact__menu">
-            <a href="https://t.me/@cafenetcarneet" target="_blank" class="quick-contact__item" aria-label="تلگرام"><i class="ph-bold ph-telegram-logo"></i></a>
-            <a href="https://rubika.ir/@Lhsysits" target="_blank" class="quick-contact__item" aria-label="روبیکا"><img src="images/rubika-logo.png" alt="روبیکا"></a>
-            <a href="tel:+989305649714" class="quick-contact__item" aria-label="تماس تلفنی"><i class="ph-bold ph-phone-call"></i></a>
-            <a href="support.html" class="quick-contact__item" aria-label="پشتیبانی آنلاین"><i class="ph-bold ph-headset"></i></a>
-        </div>
-        <button class="quick-contact__toggle" id="quickContactToggle" aria-label="باز کردن منوی تماس سریع">
-            <!-- The icon has been changed from ph-plus to ph-chat-dots -->
-            <i class="ph-bold ph-chat-dots"></i>
-        </button>
-    </div>
 </div>
+
+    <section class="hero">
+        <div class="hero__stars"></div>
+        <div class="container hero__container">
+            <div class="hero__content">
+                <h1 class="animate-on-load">کافی نت کارنت: دنیای دیجیتال در دستان شما</h1>
+                <p class="animate-on-load animate-delay-1">دیگر نگران صف‌های طولانی و فرآیندهای پیچیده نباشید. ما با
+                    تخصص و سرعت، تمام خدمات اینترنتی شما را از ثبت‌نام‌های حساس تا امور روزمره، به بهترین شکل انجام
+                    می‌دهیم.</p>
+                <a href="services.html" class="button button--glow animate-on-load animate-delay-2">خدمات انلاین <i
+                        class="ph-bold ph-arrow-left"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">چرا کارنت را انتخاب کنید؟</h2>
+            <div class="features__grid">
+                <div class="feature-card animate-on-scroll">
+                    <div class="feature-card__icon"><i class="ph-bold ph-shield-check"></i></div>
+                    <h3 class="feature-card__title">امنیت و اطمینان</h3>
+                    <p class="feature-card__text">اطلاعات شما نزد ما امانت است. تمامی فرآیندها با بالاترین سطح امنیت
+                        انجام می‌شوند.</p>
+                </div>
+                <div class="feature-card animate-on-scroll animate-delay-1">
+                    <div class="feature-card__icon"><i class="ph-bold ph-rocket-launch"></i></div>
+                    <h3 class="feature-card__title">سرعت بی‌نظیر</h3>
+                    <p class="feature-card__text">زمان شما برای ما ارزشمند است. خدمات در کوتاه‌ترین زمان ممکن و با دقت
+                        کامل ارائه می‌گردند.</p>
+                </div>
+                <div class="feature-card animate-on-scroll animate-delay-2">
+                    <div class="feature-card__icon"><i class="ph-bold ph-headset"></i></div>
+                    <h3 class="feature-card__title">پشتیبانی تخصصی</h3>
+                    <p class="feature-card__text">از ابتدا تا انتهای فرآیند همراه شما هستیم و به تمام سوالات شما پاسخ
+                        می‌دهیم.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="promotions-section">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">جوایز داغ کارنت</h2>
+            <div class="promotions__grid">
+                <div class="promotion-card animate-on-scroll">
+                    <div class="promotion-card__icon"><i class="ph-bold ph-printer"></i></div>
+                    <h3 class="promotion-card__title">هدیه چاپ</h3>
+                    <p class="promotion-card__text">با سفارش چاپ بیش از ۲۰۰ صفحه، ۵۰ صفحه بعدی را مهمان ما باشید!</p>
+                    <span class="promotion-card__expiry">همیشه معتبر</span>
+                </div>
+                <div class="promotion-card animate-on-scroll animate-delay-1">
+                    <div class="promotion-card__icon"><i class="ph-bold ph-student"></i></div>
+                    <h3 class="promotion-card__title">تخفیف تحصیلی</h3>
+                    <p class="promotion-card__text">از ۱۵٪ تا ۲۰٪ تخفیف ویژه برای تمام امور مربوط به ثبت‌نام کنکور و
+                        مدارس بهره‌مند شوید.</p>
+                    <span class="promotion-card__expiry">در فصل ثبت‌نام</span>
+                </div>
+                <div class="promotion-card animate-on-scroll animate-delay-2">
+                    <div class="promotion-card__icon"><i class="ph-bold ph-star"></i></div>
+                    <h3 class="promotion-card__title">پاداش وفاداری</h3>
+                    <p class="promotion-card__text">پس از انجام ۳ خدمت در کافی نت کارنت، ۱ خدمت بعدی را از ما هدیه
+                        بگیرید.</p>
+                    <span class="promotion-card__expiry">ویژه اعضای باشگاه مشتریان</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="about" id="about-us">
+        <div class="container about__container">
+            <div class="about__image animate-on-scroll">
+                <img src="images/shop-interior.webp" alt="محیط داخلی کافه نت کارنت">
+            </div>
+            <div class="about__content animate-on-scroll animate-delay-1">
+                <h2 class="section-title">درباره کارنت</h2>
+                <p>کافی نت کارنت با هدف ارائه خدمات آنلاین سریع، دقیق و امن به همشهریان عزیز تاسیس شده است. ما می‌دانیم
+                    که زمان شما ارزشمند است و فرآیندهای اداری و اینترنتی می‌تواند پیچیده و وقت‌گیر باشد. تیم ما متشکل از
+                    افراد متخصص و با تجربه است که تمام امور شما، از ثبت‌نام‌های حساس دولتی گرفته تا کارهای روزمره
+                    دانشجویی و اداری را با بالاترین کیفیت انجام می‌دهد.</p>
+                <p>هدف ما، تبدیل شدن به معتبرترین مرکز خدمات آنلاین در منطقه است، جایی که شما با خیال راحت می‌توانید
+                    تمام نیازهای دیجیتال خود را به ما بسپارید.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about-us">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">راه‌های ارتباطی</h2>
+            <div class="about__wrapper animate-on-scroll">
+                <div class="about__map">
+                    <iframe src="https://maps.google.com/maps?q=35.013333,58.778056&hl=fa&z=17&amp;output=embed"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="about__content-overlay">
+                    <div class="about__text">
+                        <h3>آدرس و راه‌های ارتباطی</h3>
+                        <p class="about__address"><strong>آدرس:</strong> خراسان رضوی - مه ولات - فیض آباد - خیابان امام
+                            خمینی - روبرو بانک ملت</p>
+                        <p>برای ارتباط سریع، ما را در شبکه‌های اجتماعی دنبال کنید یا به صورت حضوری مراجعه فرمایید.</p>
+                        <a href="https://www.google.com/maps/dir/?api=1&destination=35.013333,58.778056" target="_blank"
+                            class="button button--navigate">
+                            <i class="ph-bold ph-diamond"></i>
+                            مسیریابی با نقشه
+                        </a>
+                    </div>
+                    <div class="social-links">
+                        <a href="tel:+989305649714" class="social-links__item" aria-label="تماس تلفنی"><i
+                                class="ph-bold ph-phone-call"></i></a>
+                        <a href="https://t.me/@cafenetcarneet" target="_blank" class="social-links__item"
+                            aria-label="تلگرام"><i class="ph-bold ph-telegram-logo"></i></a>
+                        <a href="https://www.instagram.com/cafe_net_carnet?igsh=d3p4d2g1Mncwbzc3" target="_blank"
+                            class="social-links__item" aria-label="اینستاگرام"><i
+                                class="ph-bold ph-instagram-logo"></i></a>
+                        <a href="https://rubika.ir/@Lhsysits" target="_blank" class="social-links__item"
+                            aria-label="روبیکا">
+                            <img src="images/rubika-logo.png" alt="لوگوی روبیکا" class="social-links__img-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="licenses">
+        <div class="container">
+            <h2 class="section-title animate-on-scroll">مجوزها و نمادهای اعتماد</h2>
+            <div class="licenses__grid animate-on-scroll animate-delay-1">
+                <div class="license__item">
+                    <a href="#" target="_blank" aria-label="نماد اعتماد الکترونیکی">
+                        <img src="https://placehold.co/120x120/f0f0f0/1e1e1e?text=eNamad"
+                            alt="نماد اعتماد الکترونیکی (اینماد)">
+                    </a>
+                </div>
+                <div class="license__item">
+                    <a href="#" target="_blank" aria-label="نشان ملی ثبت رسانه های دیجیتال">
+                        <img src="https://placehold.co/120x120/f0f0f0/1e1e1e?text=Samandehi"
+                            alt="نشان ملی ثبت (ساماندهی)">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="widget-container">
+        <div class="quick-contact-widget" id="quickContactWidget">
+            <div class="quick-contact__menu">
+                <a href="https://t.me/@cafenetcarneet" target="_blank" class="quick-contact__item"
+                    aria-label="تلگرام"><i class="ph-bold ph-telegram-logo"></i></a>
+                <a href="https://rubika.ir/@Lhsysits" target="_blank" class="quick-contact__item"
+                    aria-label="روبیکا"><img src="images/rubika-logo.png" alt="روبیکا"></a>
+                <a href="tel:+989305649714" class="quick-contact__item" aria-label="تماس تلفنی"><i
+                        class="ph-bold ph-phone-call"></i></a>
+                <a href="support.html" class="quick-contact__item" aria-label="پشتیبانی آنلاین"><i
+                        class="ph-bold ph-headset"></i></a>
+            </div>
+            <button class="quick-contact__toggle" id="quickContactToggle" aria-label="باز کردن منوی تماس سریع">
+                <!-- The icon has been changed from ph-plus to ph-chat-dots -->
+                <i class="ph-bold ph-chat-dots"></i>
+            </button>
+        </div>
+    </div>
 
     <footer class="footer">
         <div class="container">
@@ -214,4 +244,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

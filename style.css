@@ -2506,7 +2506,7 @@ body.fade-out { opacity: 0; transition: opacity 0.4s ease-out; }
 
     /* استایل دکمه همبرگری */
 /* ======================================================== */
-/* === استایل‌های ریسپانسیو (منوی نهایی، تک‌خطی و شیک) === */
+/* === استایل نهایی و قطعی (منوی تمام‌عرض و افقی) === */
 /* ======================================================== */
 
 .mobile-nav-toggle,
@@ -2537,9 +2537,9 @@ body.fade-out { opacity: 0; transition: opacity 0.4s ease-out; }
     .mobile-nav-overlay {
         display: flex; flex-direction: column;
         position: fixed; z-index: 10000; inset: 0;
-        background-color: var(--bg-color);
+        background-color: var(--bg-color); /* رنگ پس‌زمینه اصلی */
         transform: translateX(100%);
-        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+        transition: transform 0.5s cubic-bezier(0.25, 1, 0.5, 1);
     }
     
     .mobile-nav__header {
@@ -2554,21 +2554,25 @@ body.fade-out { opacity: 0; transition: opacity 0.4s ease-out; }
     }
     
     .mobile-nav {
-        padding-top: 0.5rem;
         overflow-y: auto;
     }
     
     .mobile-nav ul {
         list-style: none; padding: 0; margin: 0;
     }
+
+    /* === اصلاح کلیدی و نهایی برای هر آیتم منو === */
+    .mobile-nav li {
+        border-bottom: 1px solid var(--border-color); /* خط جداکننده افقی */
+    }
     
-    /* === استایل نهایی و شیک برای هر لینک === */
     .mobile-nav a {
         display: flex;
-        align-items: center;  /* تراز عمودی آیکون و متن */
-        gap: 1.2rem;          /* فاصله بین آیکون و متن */
+        flex-direction: row; /* مهم: اطمینان از چیدمان افقی */
+        align-items: center;
+        gap: 1.2rem;
         width: 100%;
-        padding: 1rem 1.5rem; /* پدینگ استاندارد */
+        padding: 1.2rem 2rem;
         text-decoration: none;
         color: var(--text-light);
         transition: background-color 0.2s ease;
@@ -2577,18 +2581,17 @@ body.fade-out { opacity: 0; transition: opacity 0.4s ease-out; }
         background-color: var(--surface-color);
     }
 
-    /* استایل آیکون */
     .mobile-nav a i {
         font-size: 1.4rem;
         color: var(--text-muted);
         transition: color 0.2s ease;
     }
 
-    /* استایل متن (جمع و جور و خوانا) */
     .mobile-nav a span {
         font-family: var(--font-primary);
         font-weight: 500;
-        font-size: 1rem; /* اندازه کاملا استاندارد */
+        font-size: 1rem;
+        white-space: nowrap; /* جلوگیری از شکستن متن به خط بعدی */
     }
     
     /* استایل لینک فعال */
@@ -2604,5 +2607,5 @@ body.fade-out { opacity: 0; transition: opacity 0.4s ease-out; }
     body.nav-is-open .mobile-nav-overlay { transform: translateX(0); }
     body.nav-is-open .mobile-nav-toggle { opacity: 0; pointer-events: none; }
     body.nav-is-open { overflow: hidden; }
-}
-}
+
+}}
