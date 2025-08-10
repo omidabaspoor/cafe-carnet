@@ -12,5 +12,8 @@
   "dependencies": {
     "directus": "^11.10.0",
     "sqlite3": "^5.1.7"
+  },
+  "scripts": {
+  "start": "directus start"
   }
 }
