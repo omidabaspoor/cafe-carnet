@@ -2505,66 +2505,46 @@ body.fade-out { opacity: 0; transition: opacity 0.4s ease-out; }
     }
 
     /* استایل دکمه همبرگری */
+/* ======================================================== */
+/* === استایل‌های ریسپانسیو (منوی نهایی با چیدمان ضد-همپوشانی) === */
+/* ======================================================== */
+
 .mobile-nav-toggle,
 .mobile-nav-overlay {
     display: none;
 }
 
-/* 2. استایل‌ها فقط در دستگاه‌های موبایل اعمال می‌شوند */
 @media (max-width: 768px) {
-    /* مخفی کردن منوی دسکتاپ */
     .header__nav {
         display: none;
     }
 
-    /* استایل دکمه همبرگری (بدون تغییر) */
     .mobile-nav-toggle {
-        display: block;
-        position: relative;
-        z-index: 2;
-        background: transparent;
-        border: 0;
-        width: 2.5rem;
-        aspect-ratio: 1;
-        padding: 0;
-        cursor: pointer;
+        display: block; position: relative; z-index: 2;
+        background: transparent; border: 0; width: 2.5rem;
+        aspect-ratio: 1; padding: 0; cursor: pointer;
     }
     .mobile-nav-toggle::before,
     .mobile-nav-toggle::after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 3px;
-        background: var(--text-light);
-        border-radius: 5px;
-        left: 0;
+        content: ''; position: absolute; width: 100%; height: 3px;
+        background: var(--text-light); border-radius: 5px; left: 0;
         transition: all 0.3s ease-out;
     }
     .mobile-nav-toggle::before { top: 25%; }
     .mobile-nav-toggle::after { top: 65%; }
 
-    /* --- اصلاحات اصلی در این بخش‌ها اعمال شده است --- */
-
-    /* کانتینر اصلی منو با قابلیت اسکرول */
+    /* --- کانتینر اصلی منو --- */
     .mobile-nav-overlay {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        position: fixed;
-        z-index: 10000;
-        inset: 0;
+        display: flex; flex-direction: column;
+        position: fixed; z-index: 10000; inset: 0;
         background-color: var(--bg-color);
         transform: translateX(100%);
         transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
-        height: 100vh;
-        overflow: hidden;
     }
     
     .mobile-nav__header {
-        flex-shrink: 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+        flex-shrink: 0; display: flex;
+        justify-content: space-between; align-items: center;
         padding: 1rem 1.5rem;
         border-bottom: 1px solid var(--border-color);
     }
@@ -2572,84 +2552,57 @@ body.fade-out { opacity: 0; transition: opacity 0.4s ease-out; }
         background: none; border: none; color: var(--text-muted); font-size: 2rem;
         cursor: pointer; transition: all 0.3s ease;
     }
-    .mobile-nav__close-btn:hover { color: var(--text-light); transform: rotate(90deg); }
-
-    /* بدنه منو که اسکرول می‌شود */
+    
     .mobile-nav {
-        flex-grow: 1;
-        overflow-y: auto; /* فعال کردن اسکرول عمودی */
+        padding-top: 0.5rem;
+        overflow-y: auto;
     }
     
-    /* اصلاح کامل لیست و آیتم‌ها */
     .mobile-nav ul {
-        list-style: none;
-        padding: 0; /* حذف هرگونه پدینگ پیش‌فرض */
-        margin: 0;  /* حذف هرگونه مارجین پیش‌فرض */
-        width: 100%;
-    }
-
-    .mobile-nav li {
-        border-bottom: 1px solid var(--border-color); /* جداکننده بین لینک‌ها */
-    }
-    .mobile-nav li:last-child {
-        border-bottom: none;
+        list-style: none; padding: 0; margin: 0;
     }
     
-    /* اصلاح کامل لینک‌ها (مهم‌ترین بخش) */
+    /* === اصلاح کلیدی و نهایی برای لینک‌ها === */
     .mobile-nav a {
         display: flex;
-        flex-direction: column;
-        align-items: flex-start; /* تراز کردن متن به سمت راست (شروع) */
-        width: 100%;             /* گرفتن تمام عرض */
-        color: var(--text-light);
+        align-items: center;
+        width: 100%;
+        padding: 1rem 1.5rem; /* پدینگ بهینه شده */
         text-decoration: none;
-        padding: 1rem 2rem;      /* پدینگ داخلی */
-        background-color: transparent; /* حذف پس‌زمینه کارتی */
-        border: none;            /* حذف بوردر کارتی */
-        border-radius: 0;        /* حذف گوشه‌های گرد */
-        transform: translateY(100%);
-        transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1), background-color 0.3s ease;
+        color: var(--text-light);
+        transition: background-color 0.3s ease;
     }
     .mobile-nav a:hover {
         background-color: var(--surface-color);
     }
 
-    /* اصلاح فونت و اندازه عنوان اصلی لینک */
-    .mobile-nav a span {
-        font-family: var(--font-primary);
-        font-weight: 700;
-        font-size: 1.1rem; /* اندازه خوانا و استاندارد */
-        margin-bottom: 2px;
-    }
-    /* اصلاح فونت و اندازه توضیحات */
-    .mobile-nav a small {
-        font-family: var(--font-primary);
-        font-size: 0.8rem;
+    /* ۱. تعریف فضای ثابت برای آیکون */
+    .mobile-nav a i {
+        flex-shrink: 0; /* مهم: آیکون هرگز کوچک نمی‌شود */
+        width: 30px;    /* یک عرض ثابت برای آیکون */
+        font-size: 1.4rem;
         color: var(--text-muted);
-    }
-    /* استایل لینک فعال */
-    .mobile-nav a.nav__link--active span {
-        color: var(--primary-color);
-    }
-    
-    .mobile-nav__footer {
-        flex-shrink: 0;
-        padding: 1.5rem 2rem;
-        border-top: 1px solid var(--border-color);
-    }
-    .mobile-nav__footer .social-links {
-        justify-content: center;
+        transition: color 0.3s ease;
+        margin-left: 1rem; /* فاصله از متن */
     }
 
-    /* --- استایل‌های حالت باز بودن منو (بدون تغییر) --- */
-    body.nav-is-open .mobile-nav-overlay { transform: translateX(0); }
-    body.nav-is-open .mobile-nav a { transform: translateY(0); }
-    body.nav-is-open .mobile-nav li:nth-child(2) a { transition-delay: 0.05s; }
-    body.nav-is-open .mobile-nav li:nth-child(3) a { transition-delay: 0.1s; }
-    body.nav-is-open .mobile-nav li:nth-child(4) a { transition-delay: 0.15s; }
-    body.nav-is-open .mobile-nav li:nth-child(5) a { transition-delay: 0.2s; }
-    body.nav-is-open .mobile-nav li:nth-child(6) a { transition-delay: 0.25s; }
+    /* ۲. تعریف فضای متغیر برای متن */
+    .mobile-nav a span {
+        flex-grow: 1; /* مهم: متن بقیه فضا را پر می‌کند */
+        font-family: var(--font-primary);
+        font-weight: 500;
+        font-size: 1rem; /* اندازه استاندارد و خوانا */
+        line-height: 1.5;
+    }
     
+    /* ۳. استایل لینک فعال */
+    .mobile-nav a.nav__link--active span,
+    .mobile-nav a.nav__link--active i {
+        color: var(--primary-color);
+    }
+
+    /* --- استایل‌های حالت باز بودن منو --- */
+    body.nav-is-open .mobile-nav-overlay { transform: translateX(0); }
     body.nav-is-open .mobile-nav-toggle { opacity: 0; pointer-events: none; }
     body.nav-is-open { overflow: hidden; }
 
