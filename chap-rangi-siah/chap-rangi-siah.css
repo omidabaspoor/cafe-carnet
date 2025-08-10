@@ -1,0 +1,105 @@
+/* --- 1. Design System & Base --- */
+:root {
+    --primary-color: #4CAF50;
+    --dark-green: #2e7d32;
+    --accent-color: #cddc39;
+    --bg-color: #121212;
+    --surface-color: #1e1e1e;
+    --text-color: #e0e0e0;
+    --text-muted: #a0a0a0;
+    --text-light: #ffffff;
+    --border-color: #333333;
+    --font-primary: 'Vazirmatn', sans-serif;
+    --font-headings: 'Lalezar', cursive;
+    --shadow: 0 8px 24px rgba(0, 0, 0, 0.5);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: var(--font-primary); background-color: var(--bg-color); color: var(--text-color); line-height: 1.8; font-size: 16px; overflow-x: hidden; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+.section-title { text-align: center; font-family: var(--font-headings); font-size: clamp(2.5rem, 6vw, 3.5rem); color: var(--text-light); letter-spacing: 1px; margin-bottom: 20px; position: relative; }
+.section-subtitle { text-align: center; color: var(--text-muted); font-size: 1.1rem; max-width: 600px; margin: -10px auto 60px auto; }
+ul { list-style-position: inside; }
+
+/* --- 2. Button Component --- */
+.button {
+    background: var(--dark-green);
+    color: var(--text-light);
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 1px solid var(--dark-green);
+    cursor: pointer;
+    font-family: var(--font-primary);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+.button:hover { background: var(--primary-color); transform: translateY(-5px); border-color: var(--primary-color); }
+
+/* --- 3. Header --- */
+.header { background-color: rgba(18, 18, 18, 0.8); backdrop-filter: blur(10px); padding: 1rem 0; position: sticky; top: 0; z-index: 1000; border-bottom: 1px solid var(--border-color); }
+.header__container { display: flex; justify-content: space-between; align-items: center; }
+.header__logo { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+.header__logo-icon { font-size: 2.5rem; color: var(--primary-color); }
+.logo-text { font-family: var(--font-headings); font-size: 2rem; color: var(--text-light); }
+.header__brand-info .back-to-services-link { color: var(--text-muted); text-decoration: none; transition: color 0.3s; display: inline-flex; align-items: center; gap: 8px; }
+.header__brand-info .back-to-services-link:hover { color: var(--text-light); }
+
+/* --- 4. Hero Section --- */
+.hero { padding: 100px 0; position: relative; overflow: hidden; text-align: center; }
+.hero__stars { position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100"><circle cx="5" cy="5" r="1" fill="%232e7d32"/></svg>'); animation: stars-fall 60s linear infinite; opacity: 0.3; }
+@keyframes stars-fall { from { background-position: 0 0; } to { background-position: 0 1000px; } }
+.hero__container { display: flex; justify-content: center; align-items: center; min-height: 60vh; }
+.hero__content { max-width: 750px; position: relative; z-index: 2; }
+.hero__content h1 { font-family: var(--font-headings); font-size: clamp(2.8rem, 7vw, 4.8rem); color: var(--text-light); margin-bottom: 1.5rem; line-height: 1.2; }
+.hero__content p { font-size: 1.2rem; margin: 0 auto 2.5rem; color: var(--text-muted); }
+.hero .button { background: var(--primary-color); border-color: var(--primary-color); }
+.hero .button:hover { background: var(--accent-color); border-color: var(--accent-color); color: var(--bg-color); }
+
+/* --- 5. Services Section --- */
+.services-section { padding: 100px 0; background-color: var(--surface-color); }
+.services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+.service-card { text-align: center; position: relative; padding: 20px; }
+.service-card__icon { font-size: 3rem; color: var(--primary-color); margin-bottom: 20px; }
+.service-card__title { font-family: var(--font-headings); font-size: 1.8rem; margin-bottom: 15px; color: var(--text-light); }
+.service-card p { color: var(--text-muted); }
+
+/* --- 6. Accordion Section --- */
+.accordion-section { padding: 100px 0; }
+.accordion { max-width: 800px; margin: 0 auto; border: 1px solid var(--border-color); border-radius: 10px; overflow: hidden; }
+.accordion__item { border-bottom: 1px solid var(--border-color); }
+.accordion__item:last-child { border-bottom: none; }
+.accordion__header { background: var(--surface-color); border: none; color: var(--text-light); width: 100%; padding: 20px 25px; display: flex; justify-content: space-between; align-items: center; font-family: var(--font-primary); font-weight: 700; font-size: 1.2rem; cursor: pointer; text-align: right; transition: background-color 0.3s ease; }
+.accordion__header:hover { background-color: #2a2a2a; }
+.accordion__icon { font-size: 1.2rem; color: var(--primary-color); transition: transform 0.3s ease; }
+.accordion__item.is-open .accordion__icon { transform: rotate(45deg); }
+.accordion__content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out, padding 0.4s ease-out; background: var(--bg-color); padding: 0 25px; }
+.accordion__content p { padding-bottom: 25px; color: var(--text-muted); }
+.accordion__content p:first-child { padding-top: 25px; }
+
+
+/* --- 7. CTA Section --- */
+.cta-section { padding: 100px 0; text-align: center; background-color: var(--surface-color); }
+.cta-section__title { font-family: var(--font-headings); font-size: clamp(2rem, 5vw, 3rem); margin-bottom: 1rem; color: var(--text-light); }
+.cta-section__text { color: var(--text-muted); font-size: 1.1rem; margin-bottom: 2.5rem; max-width: 600px; margin-left: auto; margin-right: auto; }
+.cta-actions { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+.button--copy { background-color: var(--surface-color); color: var(--accent-color); border-color: var(--accent-color); }
+.button--copy:hover { background-color: var(--accent-color); color: var(--bg-color); }
+
+/* --- 8. Footer & Animations --- */
+.footer { text-align: center; padding: 40px 0; background-color: #000; color: var(--text-muted); margin-top: 100px; }
+.logo-text-footer { font-family: var(--font-headings); color: var(--primary-color); }
+.animate-on-load, .animate-on-scroll { opacity: 0; transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.animate-on-load { animation: fadeInSlideUp 0.8s ease-out forwards; }
+.animate-on-scroll { transform: translateY(50px); }
+.animate-on-scroll.is-visible { opacity: 1; transform: translateY(0); }
+.animate-delay-1 { animation-delay: 0.2s; transition-delay: 0.2s; }
+.animate-delay-2 { animation-delay: 0.4s; transition-delay: 0.4s; }
+.animate-delay-3 { animation-delay: 0.6s; transition-delay: 0.6s; }
+@keyframes fadeInSlideUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
