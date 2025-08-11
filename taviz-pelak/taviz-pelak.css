@@ -134,4 +134,21 @@ b { color: var(--text-light); }
     .header__brand-info { display: none; }
     .challenge-card { flex-direction: column; text-align: center; }
     .challenge-card__icon { margin-bottom: -10px; }
+}/* ============================================= */
+/* === نمایش دکمه بازگشت در صفحات داخلی (موبایل) === */
+/* ============================================= */
+
+/* در حالت عادی (صفحه اصلی)، دکمه بازگشت مخفی است */
+.header__brand-info {
+    display: none;
+}
+
+/* اما اگر صفحه داخلی بود... */
+.body-inner-page .header__brand-info {
+    display: flex; /* دکمه بازگشت را نمایش بده */
+}
+
+/* و دکمه همبرگری را مخفی کن */
+.body-inner-page .header__actions {
+    display: none;
 }
